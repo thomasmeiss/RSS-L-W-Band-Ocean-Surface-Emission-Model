@@ -6,11 +6,11 @@
 ! References
 !
 ! [MW2004]       Meissner, T. and F. Wentz, The complex dielectric constant of pure and sea water from microwave satellite observations, 
-!                IEEE TGRS, 2004, 42(9), 1836 – 1849, doi:10.1109/TGRS.2004.831888.
+!                IEEE TGRS, 2004, 42(9), 1836 â€“ 1849, doi:10.1109/TGRS.2004.831888.
 !
 ! [MW2012]	     Meissner, T. and F. Wentz, The emissivity of the ocean surface between 6 and 90 GHz 
 !                over a large range of wind speeds and Earth incidence angles, 
-!                IEEE TGRS, 2012, 50(8), 3004 – 3026, doi: 10.1109/TGRS.2011.2179662.   
+!                IEEE TGRS, 2012, 50(8), 3004 â€“ 3026, doi: 10.1109/TGRS.2011.2179662.   
 !
 ! [MWR2014]  	 Meissner, T., F. Wentz, F. and L. Ricciardulli, The emission and scattering of L-band microwave radiation 
 !                from rough ocean surfaces and wind speed measurements from Aquarius, 
@@ -224,7 +224,8 @@ save
     endif
 
 
-    call fd_emiss_allfreq(freq=xfreq,tht=tht,sst=sst,wind=xssws,phir=xphir, &
+    ! bug fix TM 06/29/2026: include sss 
+    call fd_emiss_allfreq(freq=xfreq,tht=tht,sst=sst,sal=xsal,wind=xssws,phir=xphir, &
                   emiss_0=xe0, emiss_wind=xewind, emiss_phi=xestokes, eharm=xeharm)
 
 
